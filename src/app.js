@@ -27,7 +27,6 @@ app.use(express.static(publicDirectoryPath));
 app.get('', (req, res) => {
     res.render('index',{
         pageTitle: 'Weather',
-        title: 'Weather',
         name: 'Kamelot'
     });
 });
@@ -36,7 +35,6 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about',{
         pageTitle: 'about',
-        title: 'About Page',
         name: 'Kamelot'
     });
 });
@@ -45,7 +43,6 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help',{
         pageTitle: 'help',
-        title: 'Help Page',
         helpText: 'This is some helpful text',
         name: 'Kamelot'
     });
@@ -69,16 +66,16 @@ app.get('/weather', (req, res) => {
     if(!req.query.address){
         return res.send({
             error: 'You must provide a search address'
-        })
-    }
+        });
+    };
         geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
             if (error){
-                return res.send(error);
+                return res.send({error});
             }
                 //forecast
                 forecast(latitude, longitude, (error, forecastdata) => {
                     if (error){
-                        return res.send(error)
+                        return res.send({error})
                     }
                     res.send ({
                         address: location,
@@ -94,7 +91,6 @@ app.get('/weather', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('404', {
         pageTitle: '404',
-        title: '404 Page',
         errorText: 'Help article not found',
         name: 'Kamelot'
     });

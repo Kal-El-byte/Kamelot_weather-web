@@ -11,9 +11,9 @@ const forecast = (latitude, longitude, callback) => {
         }else{
         callback(undefined, {
             temperature: body.current.temperature + '℃',
-            wind_speed: body.current.wind_speed,
+            wind_speed: body.current.wind_speed + ' km/h',
             location: body.location.name,
-            humidity: body.current.wind_speed
+            humidity: body.current.wind_speed + '%'
         }); 
         }; 
     });

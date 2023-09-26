@@ -1,14 +1,96 @@
 /* ********************main page styling**************** */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 body{
     color: #333333;
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 0 16px;
+    /* max-width: 650px; */
+    /* margin: 0 auto; */
+    padding: 20px 100px;
 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: url('../img/dark_mountain.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* padding: 20px 100px; */
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    /* min-width: 1200px; */
+    /* margin: 0 auto;
+     */
+    margin-bottom: 10px;
+}
+
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+    font-family: 'Rubik Pixels', cursive;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    left: 0;
+    bottom: -6px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: .5s;
+}
+
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navigation .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
 }
 
 .main-content{
@@ -20,30 +102,16 @@ footer{
     border-top: 1px solid #eeeeee;
     margin-top: 16px;
     padding: 16px 0;
+    text-align: center;
 }
 
-header {
-    margin-top: 16px;
-    margin-bottom: 48px;
-}
-
-header h1{
-    font-size: 64px;
-    margin-bottom: 16px;
-}
-
-header a{
-    color: #888888;
-    margin-right: 16px;
-    text-decoration: none;
-}
-/* *********************Card Sttyling**************** */
+/* card styling */
 .card{
     width: 90%;
-    max-width: 450px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
+    max-width: 470px;
+    backdrop-filter: blur(5px);
     color: #fff;
-    margin: 100px auto 0;
+    margin: 90px auto 0; /* 100px from top, 0 from below, left and right auto */
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
@@ -80,7 +148,7 @@ header a{
 }
 
 .search button img{
-    width: 16px;
+    width: 20px;
 }
 
 .weather-icon{
@@ -99,7 +167,6 @@ header a{
     margin-top: -10px;
 }
 
-    /* ************ Stlys for the card view *********** */
 .details{
     display: flex;
     align-items: center;
@@ -115,7 +182,7 @@ header a{
 }
 
 .col img{
-    width: 40px;
+    width: 50px;
     margin-right: 10px;
 }
 
