@@ -192,7 +192,7 @@ footer{
 }
 
 /* for mobile view  */
-@media (max-width: 375px) {
+@media (max-width: 200px) {
     body{
         padding: 0;
     }
