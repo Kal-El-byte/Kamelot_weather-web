@@ -192,10 +192,9 @@ footer{
 }
 
 /* for mobile view  */
-@media (max-width: 480px) {
+@media (max-width: 540px) {
     body{
-        padding: 0;
-        max-width: ;
+        padding: 0 12px;
     }
     
     .card{
